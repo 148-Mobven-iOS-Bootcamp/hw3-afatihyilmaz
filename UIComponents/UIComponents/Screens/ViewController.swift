@@ -135,7 +135,7 @@ class ViewController: UIViewController {
         print("Date Day        : ", sender.date.day) // 22
         print("Date Month      : ", sender.date.month) // 02
         print("Date Year       : ", sender.date.year) // 2022
-        print("Date Pretty Year: ", sender.date.prettyYear) //"22<>02<>2022"
+        print("Date Pretty Year: ", sender.date.dateAsPrettyString) //"22<>02<>2022"
     }
 
 }
@@ -191,7 +191,7 @@ extension Date {
     var year: Int {
         return Calendar.current.dateComponents([.year], from: self).year ?? -1
     }
-    var prettyYear: String {
+    var dateAsPrettyString: String {
         let date = "dd<>MM<>yyyy"
         let formatter = DateFormatter()
         formatter.dateFormat = date
