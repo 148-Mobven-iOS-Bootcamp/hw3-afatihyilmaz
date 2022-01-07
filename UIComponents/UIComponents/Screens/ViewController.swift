@@ -131,8 +131,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func datePıckerValueChanged(_ sender: UIDatePicker) {
-
-        print("Date: ", sender.date) //"27<>12<>2021"  date.year
+//MARK: Date Picker
+        print("Date Day        : ", sender.date.day) // 22
+        print("Date Month      : ", sender.date.month) // 02
+        print("Date Year       : ", sender.date.year) // 2022
+        print("Date Pretty Year: ", sender.date.prettyYear) //"22<>02<>2022"
     }
 
 }
@@ -175,4 +178,23 @@ extension ViewController: UIScrollViewDelegate {
     }
 
 
+}
+
+//MARK: Date Extension
+extension Date {
+    var month: Int {
+        return Calendar.current.dateComponents([.month], from: self).month ?? -1
+    }
+    var day: Int {
+        return Calendar.current.dateComponents([.day], from: self).day ?? -1
+    }
+    var year: Int {
+        return Calendar.current.dateComponents([.year], from: self).year ?? -1
+    }
+    var prettyYear: String {
+        let date = "dd<>MM<>yyyy"
+        let formatter = DateFormatter()
+        formatter.dateFormat = date
+        return formatter.string(from: self)
+    }
 }
