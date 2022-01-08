@@ -6,5 +6,6 @@
 - Returning year information with .year parameter
 - Created the extension that returns the date as a string in the format “28<>12<>2021” with the .dateAsPrettyString parameter.
 
-
+2- You can reach the calculator project I forked from the link below
+ - https://github.com/afatihyilmaz/WeeklyDemos
 
